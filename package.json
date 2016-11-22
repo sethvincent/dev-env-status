@@ -1,0 +1,41 @@
+{
+  "name": "dev-env-status",
+  "version": "0.0.0",
+  "description": "Get help setting up Node, Git, and other tools on your computer",
+  "main": "main.js",
+  "scripts": {
+    "test": "standard",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sethvincent/dev-env-status.git"
+  },
+  "keywords": [
+    "dev env",
+    "electron",
+    "guide",
+    "workshop",
+    "development environment",
+    "nodeschool",
+    "adventuretron",
+    "writing javascript"
+  ],
+  "author": "sethvincent",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sethvincent/dev-env-status/issues"
+  },
+  "homepage": "https://github.com/sethvincent/dev-env-status#readme",
+  "dependencies": {
+    "command-exists": "^1.0.2",
+    "dev-env-status-check": "0.0.0",
+    "execspawn": "^1.0.1",
+    "os-name": "^2.0.1",
+    "which": "^1.2.12",
+    "yo-yo": "^1.3.1"
+  },
+  "devDependencies": {
+    "standard": "^8.5.0"
+  }
+}
