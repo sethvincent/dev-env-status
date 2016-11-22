@@ -36,7 +36,7 @@ Design. At all. Any.
 
 Links to additional documentation and better in-app contextual information about each of the tools.
 
-Check the [dev-env-status-check](https://github.com/sethvincent/dev-env-status-check) for additional todos.
+Check the [dev-env-status-check](https://github.com/sethvincent/dev-env-status-check) repo for additional todos.
 
 ## Install
 
