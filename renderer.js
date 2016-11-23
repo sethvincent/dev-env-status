@@ -61,22 +61,22 @@ function osView (state) {
 }
 
 function nodeView (state) {
+  function fail () {
+    return html`<p>💥❗️ No, node is not yet installed, but we can help with that! ❗️💥 </p>`
+  }
+
+  function success () {
+    return html`<div>
+      <p>✨💖 Yes! Node is installed! 💖✨</p>
+      <p>Version: ${state.version}</p>
+      <p>Path: ${state.path}</p>
+    </div>`
+  }
+
   if (state.loading) {
     return html`<h2 class="">Checking node ...</h2>`
   } else {
     var status = state.exists ? success() : fail()
-
-    function fail () {
-      return html`<p>💥❗️ No, node is not yet installed, but we can help with that! ❗️💥 </p>`
-    }
-
-    function success () {
-      return html`<div>
-        <p>✨💖 Yes! Node is installed! 💖✨</p>
-        <p>Version: ${state.version}</p>
-        <p>Path: ${state.path}</p>
-      </div>`
-    }
 
     return html`<div class="">
       <h2 class="">Is node installed?</h2>
@@ -86,22 +86,22 @@ function nodeView (state) {
 }
 
 function npmView (state) {
+  function fail () {
+    return html`<p>💥❗️ No, npm is not yet installed, but we can help with that! ❗️💥 </p>`
+  }
+
+  function success () {
+    return html`<div>
+      <p>✨💖 Yes! npm is installed! 💖✨</p>
+      <p>Version: ${state.version}</p>
+      <p>Path: ${state.path}</p>
+    </div>`
+  }
+
   if (state.loading) {
     return html`<h2 class="">Checking npm ...</h2>`
   } else {
     var status = state.exists ? success() : fail()
-
-    function fail () {
-      return html`<p>💥❗️ No, npm is not yet installed, but we can help with that! ❗️💥 </p>`
-    }
-
-    function success () {
-      return html`<div>
-        <p>✨💖 Yes! npm is installed! 💖✨</p>
-        <p>Version: ${state.version}</p>
-        <p>Path: ${state.path}</p>
-      </div>`
-    }
 
     return html`<div class="">
       <h2 class="">Is npm installed?</h2>
@@ -111,22 +111,22 @@ function npmView (state) {
 }
 
 function gitView (state) {
+  function fail () {
+    return html`<p>💥❗️ No, git is not yet installed, but we can help with that! ❗️💥 </p>`
+  }
+
+  function success () {
+    return html`<div>
+      <p>✨💖 Yes! git is installed! 💖✨</p>
+      <p>Version: ${state.version}</p>
+      <p>Path: ${state.path}</p>
+    </div>`
+  }
+
   if (state.loading) {
     return html`<h2 class="">Checking git ...</h2>`
   } else {
     var status = state.exists ? success() : fail()
-
-    function fail () {
-      return html`<p>💥❗️ No, git is not yet installed, but we can help with that! ❗️💥 </p>`
-    }
-
-    function success () {
-      return html`<div>
-        <p>✨💖 Yes! git is installed! 💖✨</p>
-        <p>Version: ${state.version}</p>
-        <p>Path: ${state.path}</p>
-      </div>`
-    }
 
     return html`<div class="">
       <h2 class="">Is git installed?</h2>
