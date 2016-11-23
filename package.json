@@ -5,7 +5,9 @@
   "main": "main.js",
   "scripts": {
     "test": "standard",
-    "start": "electron ."
+    "bundle-css": "csskit bundle style.css > bundle.css",
+    "bundle": "npm run bundle-css",
+    "start": "npm run bundle && electron ."
   },
   "repository": {
     "type": "git",
@@ -28,14 +30,12 @@
   },
   "homepage": "https://github.com/sethvincent/dev-env-status#readme",
   "dependencies": {
-    "command-exists": "^1.0.2",
-    "dev-env-status-check": "0.0.0",
-    "execspawn": "^1.0.1",
-    "os-name": "^2.0.1",
-    "which": "^1.2.12",
+    "csskit-base": "^1.0.0",
+    "dev-env-status-check": "^1.0.0",
     "yo-yo": "^1.3.1"
   },
   "devDependencies": {
+    "csskit-cli": "^1.0.3",
     "standard": "^8.5.0"
   }
 }

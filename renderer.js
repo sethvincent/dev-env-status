@@ -1,20 +1,38 @@
 var check = require('dev-env-status-check')
 var html = require('yo-yo')
 
-check({}, function (status) {
-  var tree = layout(status)
-  document.body.appendChild(tree)
+var stream = check()
+
+var state = {}
+
+stream.on('data', function (data) {
+  if (data.type === 'os') {
+    state[data.type] = data
+  } else {
+    state[data.command] = data
+  }
+  update(state)
 })
 
+var app = render(state)
+document.body.appendChild(app)
+
+function render (state) {
+  return layout(state)
+}
+
+function update (state) {
+  var tree = render(state)
+  html.update(app, tree)
+}
+
 function layout (state) {
-  return html`<div class="">
+  return html`<div class="container">
     ${header()}
-    ${osView(state.os)}
-    ${nodeView(state.node)}
-    ${npmView(state.npm)}
-    ${gitView(state.git)}
-    ${atomView(state.atom)}
-    ${homebrewView(state.homebrew)}
+    ${state.os ? osView(state.os) : ''}
+    ${state.node ? nodeView(state.node) : ''}
+    ${state.npm ? npmView(state.npm) : ''}
+    ${state.git ? gitView(state.git) : ''}
   </div>`
 }
 
@@ -89,48 +107,6 @@ function gitView (state) {
 
   return html`<div class="">
     <h2 class="">Is git installed?</h2>
-    ${status}
-  </div>`
-}
-
-function atomView (state) {
-  var status = state.exists ? success() : fail()
-
-  function fail () {
-    return html`<p>💥❗️ No, atom is not yet installed, but we can help with that! ❗️💥 </p>`
-  }
-
-  function success () {
-    return html`<div>
-      <p>✨💖 Yes! atom is installed! 💖✨</p>
-      <p>Version: ${state.version}</p>
-      <p>Path: ${state.path}</p>
-    </div>`
-  }
-
-  return html`<div class="">
-    <h2 class="">Is atom installed?</h2>
-    ${status}
-  </div>`
-}
-
-function homebrewView (state) {
-  var status = state.exists ? success() : fail()
-
-  function fail () {
-    return html`<p>💥❗️ No, homebrew is not yet installed, but we can help with that! ❗️💥 </p>`
-  }
-
-  function success () {
-    return html`<div>
-      <p>✨💖 Yes! homebrew is installed! 💖✨</p>
-      <p>Version: ${state.version}</p>
-      <p>Path: ${state.path}</p>
-    </div>`
-  }
-
-  return html`<div class="">
-    <h2 class="">Is homebrew installed?</h2>
     ${status}
   </div>`
 }

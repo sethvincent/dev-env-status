@@ -1,0 +1,6 @@
+@import "csskit-base";
+
+.container {
+  width: 60%;
+  margin: 0px auto;
+}

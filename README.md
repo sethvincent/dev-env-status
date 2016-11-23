@@ -32,9 +32,11 @@ This project is based on [dev-env-status-check](https://github.com/sethvincent/d
 
 This module needs to be tested and adapted for use on both linux and windows.
 
-Design. At all. Any.
+Additional design improvements.
 
 Links to additional documentation and better in-app contextual information about each of the tools.
+
+For now this only checks node, npm, and git. It should check a user's system for dependencies like gcc, and we may want to check for things like atom and homebrew.
 
 Check the [dev-env-status-check](https://github.com/sethvincent/dev-env-status-check) repo for additional todos.
 
