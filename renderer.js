@@ -45,6 +45,7 @@ function header () {
 function osView (state) {
   return html`<div class="">
     <h2 class="">About your operating system</h2>
+    <p>You are using version ${state.release} of ${state.name}.</p>
   </div>`
 }
 
