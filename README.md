@@ -42,7 +42,7 @@ Check the [dev-env-status-check](https://github.com/sethvincent/dev-env-status-c
 
 ## Install
 
-Download the app. **COMING SOON.**
+### [Download the version for your computer](https://github.com/sethvincent/dev-env-status/releases)
 
 ## Contributing
 
