@@ -34,7 +34,6 @@ function update (state) {
 function layout (state) {
   return html`<div class="container">
     ${header()}
-    ${state.os ? osView(state.os) : ''}
     ${state.node ? nodeView(state.node) : ''}
     ${state.npm ? npmView(state.npm) : ''}
     ${state.git ? gitView(state.git) : ''}
@@ -47,18 +46,18 @@ function header () {
   </header>`
 }
 
-function osView (state) {
-  if (state.loading) {
-    return html`<div class="">
-      <h2>Checking your operating system ...</h2>
-    </div>`
-  } else {
-    return html`<div class="">
-      <h2 class="">About your operating system</h2>
-      <p>You are using version ${state.release} of ${state.name}.</p>
-    </div>`
-  }
-}
+// function osView (state) {
+//   if (state.loading) {
+//     return html`<div class="">
+//       <h2>Checking your operating system ...</h2>
+//     </div>`
+//   } else {
+//     return html`<div class="">
+//       <h2 class="">About your operating system</h2>
+//       <p>You are using ${state.name}.</p>
+//     </div>`
+//   }
+// }
 
 function nodeView (state) {
   function fail () {

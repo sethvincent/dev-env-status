@@ -9,7 +9,7 @@
     "clean": "rm -rf dist",
     "bundle:css": "csskit bundle style.css > bundle.css",
     "bundle": "npm run bundle:css",
-    "build": "electron-packager . --all",
+    "build": "npm run clean && electron-packager . --all --out=dist/",
     "build:osx": "electron-packager . --out=dist/osx --platform=darwin --arch=x64",
     "start": "npm run bundle && electron ."
   },
