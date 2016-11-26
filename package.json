@@ -1,7 +1,7 @@
 {
   "name": "dev-env-status",
   "productName": "Dev Env Status",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Get help setting up Node, Git, and other tools on your computer",
   "main": "main.js",
   "scripts": {
