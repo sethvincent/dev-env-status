@@ -1,3 +1,5 @@
+![development environment status banner](banner.jpg)
+
 # dev-env-status
 
 An electron app that helps new users get their computers set up with Node.js, Git, and other tools.
